@@ -13,6 +13,7 @@ while True:
     faces = face_cascade.detectMultiScale(grey, scaleFactor=1.5, minNeighbors=5)
     for (x, y, w, h) in faces:
         print(x, y, w, h)
+        # roi region of interest
 
     cv2.imshow('frame', frame)
     # if key 'q' is pressed
