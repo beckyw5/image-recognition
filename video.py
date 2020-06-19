@@ -1,15 +1,16 @@
 import numpy as np
 import cv2
 
+face_cascade = cv2.CascadeClassifier('cascades/data/haarcascade_frontalface_alt2.xml')
+
 # 0 first webcam, 1 second webcam, 0 is standard webcam
 cap = cv2.VideoCapture(1)
 
 while True:
     # if there is a feed return
     ret, frame = cap.read()
-    print(ret)
-    cv2.imshow('frame', frame)
 
+    cv2.imshow('frame', frame)
     # if key 'q' is pressed
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
