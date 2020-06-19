@@ -9,6 +9,7 @@ cap = cv2.VideoCapture(1)
 while True:
     # if there is a feed return
     ret, frame = cap.read()
+    grey = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     cv2.imshow('frame', frame)
     # if key 'q' is pressed
