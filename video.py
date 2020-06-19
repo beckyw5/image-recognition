@@ -10,6 +10,9 @@ while True:
     # if there is a feed return
     ret, frame = cap.read()
     grey = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    faces = face_cascade.detectMultiScale(grey, scaleFactor=1.5, minNeighbors=5)
+    for (x, y, w, h) in faces:
+        print(x, y, w, h)
 
     cv2.imshow('frame', frame)
     # if key 'q' is pressed
